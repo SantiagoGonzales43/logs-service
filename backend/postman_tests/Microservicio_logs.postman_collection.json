@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "f3c86709-c3c1-42a0-8522-1f74e70f2a51",
+		"name": "Microservicio_logs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44993629",
+		"_collection_link": "https://santiago-3813619.postman.co/workspace/Santiago's-Workspace~4ff5f61e-f391-47c7-8610-1e4652ad747e/collection/44993629-f3c86709-c3c1-42a0-8522-1f74e70f2a51?action=share&source=collection_link&creator=44993629"
+	},
+	"item": [
+		{
+			"name": "apikey_service",
+			"item": [
+				{
+					"name": "createApiKey",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Barear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmRmOTc0NjcxYzdiZDIwNjdjZGE4MiIsIm5hbWUiOiJTYW50aWFnbyIsImVtYWlsIjoic2FudGlhZ29AZ21haWwuY29tIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTc0ODM1MzI0NywiZXhwIjoxNzQ4MzU2ODQ3fQ.ZSaDSzkMo3KdK9t3BqUmN3ugec5GOPU01_J4n2Ld6aA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"comidasSalada\",\r\n    \"permissions\" : [\"user\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/apikey/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"apikey",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth_service",
+			"item": [
+				{
+					"name": "register_user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Ana\",\r\n    \"email\" : \"ana@gmail.com\",\r\n    \"password\" : \"ana\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login_user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"santiago@gmail.com\",\r\n    \"password\" : \"santiago\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "logs-service",
+			"item": [
+				{
+					"name": "get_logs-id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "6834806e1f36b0996b9c2164_b3b1ed9d7d684459dec1dcfb81e442e33b1eed88ae738683e5ba1d044de18b1e",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/logs/service/682df974671c7bd2067cda82",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"logs",
+								"service",
+								"682df974671c7bd2067cda82"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_logs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "6834806e1f36b0996b9c2164_b3b1ed9d7d684459dec1dcfb81e442e33b1eed88ae738683e5ba1d044de18b1e",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/logs/service",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"logs",
+								"service"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post_logs",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "6834806e1f36b0996b9c2164_b3b1ed9d7d684459dec1dcfb81e442e33b1eed88ae738683e5ba1d044de18b1e",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\r\n    \"level\": \"ERROR\",\r\n    \"message\": \"Ocurrió un error inesperado al procesar la orden.\",\r\n    \"origen\": \"order-service\",\r\n    \"transaction_id\": \"txn-981\",\r\n    \"details\": {\r\n        \"codigo_interno\": \"ERR-5001\",\r\n        \"descripcion_detallada\": \"La función de cálculo de impuestos devolvió un valor nulo.\"\r\n    },\r\n    \"error\": {\r\n        \"name\": \"InternalServerError\",\r\n        \"message\": \"Error al calcular impuestos.\",\r\n        \"stack\": \"stacktrace completo del error...\"\r\n    }\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/logs/service",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"logs",
+								"service"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "logs_user",
+			"item": [
+				{
+					"name": "get_logs-id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Barear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmRmOTc0NjcxYzdiZDIwNjdjZGE4MiIsIm5hbWUiOiJTYW50aWFnbyIsImVtYWlsIjoic2FudGlhZ29AZ21haWwuY29tIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTc0ODM1MjUxNiwiZXhwIjoxNzQ4MzU2MTE2fQ.HuHhUGeYCVcQxVSI-wbIv2mTN6vJG2A6ECA4fcMh-7E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/logs/user/682df974671c7bd2067cda82",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"logs",
+								"user",
+								"682df974671c7bd2067cda82"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "post_logs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Barear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmRmOTc0NjcxYzdiZDIwNjdjZGE4MiIsIm5hbWUiOiJTYW50aWFnbyIsImVtYWlsIjoic2FudGlhZ29AZ21haWwuY29tIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTc0ODM1MzAxNCwiZXhwIjoxNzQ4MzU2NjE0fQ.HQduFSpfmoy6crjNFAmab0mPILv3VaZdXYzVmnAQEOA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n    \"level\": \"ERROR\",\n    \"message\": \"Ocurrió un error inesperado al procesar la orden.\",\n    \"origen\": \"order-service\",\n    \"transaction_id\": \"txn-987\",\n    \"details\": {\n        \"codigo_interno\": \"ERR-5001\",\n        \"descripcion_detallada\": \"La función de cálculo de impuestos devolvió un valor nulo.\"\n    },\n    \"error\": {\n        \"name\": \"InternalServerError\",\n        \"message\": \"Error al calcular impuestos.\",\n        \"stack\": \"stacktrace completo del error...\"\n    }\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/logs/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"logs",
+								"user"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "get_logs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Barear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmRmOTc0NjcxYzdiZDIwNjdjZGE4MiIsIm5hbWUiOiJTYW50aWFnbyIsImVtYWlsIjoic2FudGlhZ29AZ21haWwuY29tIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTc0ODM1MjUxNiwiZXhwIjoxNzQ4MzU2MTE2fQ.HuHhUGeYCVcQxVSI-wbIv2mTN6vJG2A6ECA4fcMh-7E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/logs/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"logs",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

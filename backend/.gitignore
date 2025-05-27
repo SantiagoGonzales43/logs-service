@@ -1,0 +1,2 @@
+node_modules
+postman_tests/  # Ignora la carpeta completa de pruebas de Postman
